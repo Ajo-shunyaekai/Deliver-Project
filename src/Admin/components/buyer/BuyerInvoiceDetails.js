@@ -37,7 +37,14 @@ function BuyerInvoiceDetails() {
             admin_id  : adminIdSessionStorage || adminIdLocalStorage,
         };
 
-        postRequestWithToken('admin/get-invoice-details', obj, (response) => {
+        // postRequestWithToken('admin/get-invoice-details', obj, (response) => {
+        //     if (response.code === 200) {
+        //         setInvoiceDetails(response.result);
+        //     } else {
+        //         console.log('error in order details api');
+        //     }
+        // });
+        postRequestWithToken(`invoice/get-specific-invoice-details/${obj?.invoice_id}`, obj, (response) => {
             if (response.code === 200) {
                 setInvoiceDetails(response.result);
             } else {
