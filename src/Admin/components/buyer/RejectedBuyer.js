@@ -8,6 +8,7 @@ import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrow
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { postRequestWithToken } from '../../api/Requests';
 import Loader from '../../../components/Loader';
+import { apiRequests } from '../../../api';
 
 const RejectedBuyer = () => {
     const navigate = useNavigate();
@@ -52,6 +53,18 @@ const RejectedBuyer = () => {
             setLoading(false);
         })
     },[currentPage])
+    
+    const handleDownload = () => {
+        const obj = {
+            admin_id    : adminIdSessionStorage || adminIdLocalStorage ,
+            filterKey   : 'rejected',
+            filterValue : filterValue,
+            pageNo      : currentPage, 
+            pageSize    : listPerPage,
+        }        
+
+        apiRequests?.postReqCSVDownload('admin/get-buyer-list-csv', obj, 'Buyers_rejected.csv')        
+    };
 
     return (
         <>

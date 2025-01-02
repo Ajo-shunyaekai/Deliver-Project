@@ -80,6 +80,18 @@ const ApprovedSeller = () => {
         }
         fetchData()
     },[currentPage])
+    
+    const handleDownload = () => {
+        const obj = {
+            admin_id    : adminIdSessionStorage || adminIdLocalStorage ,
+            filterKey   : 'accepted',
+            filterValue : filterValue,
+            pageNo      : currentPage, 
+            pageSize    : listPerPage,
+        }        
+
+        apiRequests?.postReqCSVDownload('admin/get-supplier-list-csv', obj, 'Suppliers_approved.csv')        
+    };
 
 
     return (

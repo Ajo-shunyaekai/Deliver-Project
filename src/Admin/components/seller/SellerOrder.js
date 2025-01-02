@@ -101,6 +101,17 @@ const SellerOrder = () => {
     useEffect(() => {
         fetchData()
     },[activeLink, currentPage])
+        
+    const handleDownload = () => {
+        const obj = {
+            admin_id  : adminIdSessionStorage || adminIdLocalStorage,
+            filterKey : activeLink,
+            pageNo    : currentPage, 
+            pageSize  : ordersPerPage,
+        }        
+
+        apiRequests?.postReqCSVDownload('order/get-order-list-csv', obj, `Seller_Orders_${window?.location?.pathname?.includes('/active')?"Active":"Completed"}.csv`)        
+    };
 
     return (
         <>

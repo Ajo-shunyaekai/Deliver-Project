@@ -8,6 +8,8 @@ import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrow
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { postRequestWithToken } from '../api/Requests';
 import Loader from '../../components/Loader';
+import axios from 'axios';
+import { apiRequests } from '../../api';
 
 const SellerRequest = () => {
     const navigate = useNavigate()
@@ -52,6 +54,18 @@ const SellerRequest = () => {
             setLoading(false);
         })
     }, [currentPage])
+
+    const handleDownload = () => {
+        const obj = {
+            admin_id    : adminIdSessionStorage || adminIdLocalStorage,
+            filterKey   : 'pending',
+            filterValue : filterValue,
+            pageNo      : currentPage,
+            pageSize    : listPerPage,
+        }        
+
+        apiRequests?.postReqCSVDownload('admin/get-supplier-list-csv', obj, 'Suppliers_request.csv')        
+    };
 
     return (
         <>
