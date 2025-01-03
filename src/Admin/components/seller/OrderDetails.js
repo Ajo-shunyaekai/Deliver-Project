@@ -35,11 +35,11 @@ const OrderDetails = () => {
         //     }
         // });
         try {
-            // const response = await  apiRequests.postRequest('order/get-specific-order-details', obj)
+            // const response = await  apiRequests.postRequest(`order/get-specific-order-details/${orderId}`, obj)
             // if (response.code === 200) {
             //     setOrderDetails(response.result);
             // }
-            postRequestWithToken('order/get-specific-order-details', obj, (response) => {
+            postRequestWithToken(`order/get-specific-order-details/${orderId}`, obj, (response) => {
                 if (response.code === 200) {
                     setOrderDetails(response.result);
                 } else {

@@ -29,7 +29,7 @@ export const fetchOrderDataRedux = createAsyncThunk(
   "medicine/fetchOrderDataRedux",
   async (values, { rejectWithValue }) => {
     try {
-      const response = await apiRequests.postRequest(`order/get-specific-order-details`, values)
+      const response = await apiRequests.postRequest(`order/get-specific-order-details/${values?.order_id}`, values)
       return response.result 
     } catch (error) {
       // Log and pass the error
