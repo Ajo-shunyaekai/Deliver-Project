@@ -14,7 +14,7 @@ export const fetchOrderListRedux = createAsyncThunk(
   "order/fetchOrderListRedux",
   async (values, { rejectWithValue }) => {
     try {
-      const response = await apiRequests.postRequest('order/get-order-list-all-users', values)
+      const response = await apiRequests.postRequest('order/get-all-order-list', values)
       console.log('response', response)
       return response.result.data; 
     } catch (error) {

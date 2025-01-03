@@ -98,12 +98,12 @@ const Order = () => {
         //     setLoading(false);
         //   })
         try {
-            // const response = await  apiRequests.postRequest('order/get-order-list-all-users', obj)
+            // const response = await  apiRequests.postRequest('order/get-all-order-list', obj)
             // if (response.code === 200) {
             //     setOrderList(response.result.data)
             //     setTotalOrders(response.result.totalItems)
             // }
-            postRequestWithToken('order/get-order-list-all-users', obj, async (response) => {
+            postRequestWithToken('order/get-all-order-list', obj, async (response) => {
                 if (response.code == 200) {
                     setOrderList(response.result.data)
                     setTotalOrders(response.result.totalItems)

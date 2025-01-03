@@ -14,7 +14,7 @@ export const fetchBuyerListRedux = createAsyncThunk(
   "buyer/fetchBuyerListRedux",
   async (values, { rejectWithValue }) => {
     try {
-      const response = await apiRequests.postRequest('buyer/get-buyer-list-all-users', values)
+      const response = await apiRequests.postRequest('buyer/get-all-buyer-list', values)
       console.log('response', response)
       return response.result.data; 
     } catch (error) {

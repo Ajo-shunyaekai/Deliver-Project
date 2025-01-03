@@ -14,7 +14,7 @@ export const fetchInvoiceListRedux = createAsyncThunk(
   "invoice/fetchInvoiceListRedux",
   async (values, { rejectWithValue }) => {
     try {
-      const response = await apiRequests.postRequest('order/get-invoice-list-all-users', values)
+      const response = await apiRequests.postRequest('order/get-all-invoice-list', values)
       return response.result; 
     } catch (error) {
       // Log and pass the error

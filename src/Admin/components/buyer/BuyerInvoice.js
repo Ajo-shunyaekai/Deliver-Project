@@ -74,7 +74,7 @@ const SellerInvoice = () => {
             obj.filterKey = activeLink;
             const fetchInvoiceList = async () => {
                 try {
-                    // const response = await apiRequests.postRequest('order/get-invoice-list-all-users', obj)
+                    // const response = await apiRequests.postRequest('order/get-all-invoice-list', obj)
                     // if(response?.code!==200){
                     //     console.log('error in invoice list api', response);
                     //     return
@@ -82,7 +82,7 @@ const SellerInvoice = () => {
                     
                     // setInvoiceList(response.result.data);
                     // setTotalItems(response.result.totalItems);
-                    postRequestWithToken('order/get-invoice-list-all-users', obj, async (response) => {
+                    postRequestWithToken('order/get-all-invoice-list', obj, async (response) => {
                         if (response.code == 200) {
                             setInvoiceList(response.result.data);
                             setTotalItems(response.result.totalItems);

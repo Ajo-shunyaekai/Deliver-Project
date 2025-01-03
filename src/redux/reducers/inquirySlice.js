@@ -14,7 +14,7 @@ export const fetchInquiryListRedux = createAsyncThunk(
   "enquiry/fetchInquiryListRedux",
   async (values, { rejectWithValue }) => {
     try {
-      const response = await apiRequests.postRequest('enquiry/get-enquiry-list-all-users', values)
+      const response = await apiRequests.postRequest('enquiry/get-all-enquiry-list', values)
       console.log('response', response)
       return response.result.data; 
     } catch (error) {

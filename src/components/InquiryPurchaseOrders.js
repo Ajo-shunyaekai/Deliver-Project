@@ -80,12 +80,12 @@ const InquiryPurchaseOrder = () => {
         // })
                     
         try {
-            // const response = await  apiRequests.postRequest('enquiry/get-enquiry-list-all-users', obj)
+            // const response = await  apiRequests.postRequest('enquiry/get-all-enquiry-list', obj)
             // if (response.code === 200) {
             //     setInquiryList(response.result.data)
             //     setTotalInquiries(response.result.totalItems)
             // }
-            postRequestWithToken('enquiry/get-enquiry-list-all-users', obj, async (response) => {
+            postRequestWithToken('enquiry/get-all-enquiry-list', obj, async (response) => {
                 if (response.code == 200) {
                     setInquiryList(response.result.data)
                     setTotalInquiries(response.result.totalItems)
