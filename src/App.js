@@ -38,6 +38,7 @@ import { fetchUserData } from './redux/reducers/userDataSlice.js';
     
     
     function App() {
+        console.log('test')
 
         const _id = sessionStorage?.getItem('_id') || localStorage?.getItem('_id');
         const dispatch = useDispatch();
@@ -91,5 +92,3 @@ import { fetchUserData } from './redux/reducers/userDataSlice.js';
     }
 
     export default App;
-
-    
