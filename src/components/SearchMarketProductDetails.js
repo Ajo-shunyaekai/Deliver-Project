@@ -119,7 +119,7 @@ const SearchMarketProductDetails = () => {
             //     }
             // })
             try {
-                // const response = await apiRequests.postRequest('medicine/get-specific-medicine-details', obj)
+                // const response = await apiRequests.postRequest(`medicine/get-specific-medicine-details/${medId}`, obj)
                 // if(response?.code !== 200){
                 //     return
                 // }
@@ -127,7 +127,7 @@ const SearchMarketProductDetails = () => {
                 // setMedicineName(response?.result?.data?.medicine_name)
                 // setCountryAvailableIn(response?.result?.countryAvailable)
                 // setSupplierId(response.result?.supplier_id)
-                postRequestWithToken('medicine/get-specific-medicine-details', obj, async (response) => {
+                postRequestWithToken(`medicine/get-specific-medicine-details/${medId}`, obj, async (response) => {
                     if (response.code === 200) {
                         setDetails(response?.result)
                         setMedicineName(response?.result?.medicine_name)

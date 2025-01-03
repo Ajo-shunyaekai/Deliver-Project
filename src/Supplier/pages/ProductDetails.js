@@ -60,12 +60,12 @@ const ProductDetails = () => {
             //     }
             // })
             try {
-                // const response = await apiRequests.postRequest('medicine/get-specific-medicine-details', obj)
+                // const response = await apiRequests.postRequest(`medicine/get-specific-medicine-details/${medId}`, obj)
                 // if(response?.code !== 200){
                 //     return
                 // }
                 // setMedicineDetails(response.result.data)
-                postRequest('medicine/get-specific-medicine-details', obj, async (response) => {
+                postRequest(`medicine/get-specific-medicine-details/${medId}`, obj, async (response) => {
                     if (response.code === 200) {
                         setMedicineDetails(response.result)
                     } else {
