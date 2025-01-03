@@ -74,7 +74,7 @@ const CompleteInvoice = ({ invoiceList, currentPage, totalInvoices, invoicesPerP
                     } else {
                         console.error('Invoice content element not found');
                     }
-                }, 500);
+                }, 1000);
             };
 
             iframe.addEventListener('load', handleIframeLoad);
@@ -83,7 +83,7 @@ const CompleteInvoice = ({ invoiceList, currentPage, totalInvoices, invoicesPerP
                 iframe.removeEventListener('load', handleIframeLoad);
             };
         }
-    }, []);
+    });
 
     // Check for buyer_id in sessionStorage or localStorage
     useEffect(() => {

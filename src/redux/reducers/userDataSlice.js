@@ -16,7 +16,7 @@ export const fetchUserData = createAsyncThunk(
   "user/fetchUserData",
   async (id, { rejectWithValue }) => {
     try {
-      const response = await postRequestWithToken(`/auth/${id}`);
+      const response = await apiRequests?.getRequest(`/auth/${id}`);
       return response?.user || response?.data; // Return the actual user data or fallback
     } catch (error) {
       // Log and pass the error
