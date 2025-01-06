@@ -38,17 +38,17 @@ const ActiveOrdersDetails = ({socket}) => {
             }
         });
         try {
-            // const response = await  apiRequests.postRequest(`order/get-specific-order-details/${orderId}`, obj)
-            // if (response.code === 200) {
-            //     setOrderDetails(response.result);
-            // }
-            postRequestWithToken(`order/get-specific-order-details/${orderId}`, obj, (response) => {
-                if (response.code === 200) {
-                    setOrderDetails(response.result);
-                } else {
-                    console.log('error in order details api', response);
-                }
-            });
+            const response = await  apiRequests.getRequest(`order/get-specific-order-details/${orderId}`, obj)
+            if (response.code === 200) {
+                setOrderDetails(response.result);
+            }
+            // postRequestWithToken(`order/get-specific-order-details/${orderId}`, obj, (response) => {
+            //     if (response.code === 200) {
+            //         setOrderDetails(response.result);
+            //     } else {
+            //         console.log('error in order details api', response);
+            //     }
+            // });
         } catch (error) {
             console.log('error in order details api');
         }

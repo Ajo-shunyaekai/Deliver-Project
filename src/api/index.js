@@ -26,6 +26,7 @@ export const apiRequests = {
         url: URL,
         // withCredentials : true,
         headers: {
+          authorization : process.env.REACT_APP_Authorization,
           access_token:
             sessionStorage.getItem("token") ||
             localStorage.getItem("token") ||

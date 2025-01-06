@@ -28,7 +28,7 @@ export const fetchInvoiceDataRedux = createAsyncThunk(
   "invoice/fetchInvoiceDataRedux",
   async (values, { rejectWithValue }) => {
     try {
-      const response = await apiRequests.postRequest(`invoice/get-specific-invoice-details/${values?.invoice_id}`, values)
+      const response = await apiRequests.getRequest(`invoice/get-specific-invoice-details/${values?.invoice_id}`, values)
       return response.result 
     } catch (error) {
       // Log and pass the error

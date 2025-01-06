@@ -78,17 +78,17 @@ const SellerInquiry = () => {
             // });
             
             try {
-                // const response = await  apiRequests.postRequest('enquiry/get-all-enquiry-list', obj)
-                // if (response.code === 200) {
-                //     setList(response.result.data);
-                //     setTotalList(response.result.totalItems);
-                // }
-                postRequestWithToken('enquiry/get-all-enquiry-list', obj, async (response) => {
-                    if (response.code == 200) {
-                        setList(response.result.data);
-                        setTotalList(response.result.totalItems);
-                    }
-                })
+                const response = await apiRequests.getRequest(`enquiry/get-all-enquiry-list?pageNo=${currentPage}&pageSize=${listPerPage}&filterValue=${activeLink}`)
+                if (response.code === 200) {
+                    setList(response.result.data);
+                    setTotalList(response.result.totalItems);
+                }
+                // postRequestWithToken(`enquiry/get-all-enquiry-list?pageNo=${currentPage}&pageSize=${listPerPage}&filterValue=${activeLink}`, obj, async (response) => {
+                //     if (response.code == 200) {
+                //         setList(response.result.data);
+                //         setTotalList(response.result.totalItems);
+                //     }
+                // })
             } catch (error) {
                 console.log('Error fetching inquiry list', error);
             } finally{

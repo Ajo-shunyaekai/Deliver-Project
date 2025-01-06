@@ -14,7 +14,7 @@ export const fetchInquiryListRedux = createAsyncThunk(
   "enquiry/fetchInquiryListRedux",
   async (values, { rejectWithValue }) => {
     try {
-      const response = await apiRequests.postRequest('enquiry/get-all-enquiry-list', values)
+      const response = await apiRequests.postRequest(`enquiry/get-all-enquiry-list?pageNo=${values?.currentPage}&pageSize=${values?.listPerPage || values?.inquiryPerPage}&filterValue=${values?.filterValue}&status=${values?.status}`, values)
       console.log('response', response)
       return response.result.data; 
     } catch (error) {
@@ -29,7 +29,7 @@ export const fetchInquiryDataRedux = createAsyncThunk(
   "invoice/fetchInquiryDataRedux",
   async (values, { rejectWithValue }) => {
     try {
-      const response = await apiRequests.postRequest(`enquiry/get-specific-enquiry-details/${values?.enquiry_id}`, values)
+      const response = await apiRequests.getRequest(`enquiry/get-specific-enquiry-details/${values?.enquiry_id}`, values)
       return response.result 
     } catch (error) {
       // Log and pass the error

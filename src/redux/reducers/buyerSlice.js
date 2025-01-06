@@ -29,7 +29,7 @@ export const fetchBuyerDataRedux = createAsyncThunk(
   "medicine/fetchBuyerDataRedux",
   async (values, { rejectWithValue }) => {
     try {
-      const response = await apiRequests.postRequest(`buyer/get-specific-buyer-details/${values?.buyer_id}`, values)
+      const response = await apiRequests.getRequest(`buyer/get-specific-buyer-details/${values?.buyer_id}`, values)
       return response.result 
     } catch (error) {
       // Log and pass the error

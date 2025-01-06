@@ -3,6 +3,7 @@ import html2pdf from 'html2pdf.js';
 import { useNavigate, useParams} from 'react-router-dom';
 import moment from 'moment/moment';
 import { postRequestWithToken } from '../../api/Requests';
+import { apiRequests } from '../../../api';
 function SellerInvoiceDetails() {
     const {invoiceId} = useParams()
     const navigate    = useNavigate();
@@ -25,30 +26,41 @@ function SellerInvoiceDetails() {
     };
 
     useEffect(() => {
-        if (!adminIdSessionStorage && !adminIdLocalStorage) {
-            navigate("/admin/login");
-            return;
-        }
-
-        const obj = {
-            invoice_id    : invoiceId,
-            admin_id  : adminIdSessionStorage || adminIdLocalStorage,
-        };
-
-        // postRequestWithToken('admin/get-invoice-details', obj, (response) => {
-        //     if (response.code === 200) {
-        //         setInvoiceDetails(response.result);
-        //     } else {
-        //         console.log('error in order details api');
-        //     }
-        // });
-        postRequestWithToken(`invoice/get-specific-invoice-details/${obj?.invoice_id}`, obj, (response) => {
-            if (response.code === 200) {
-                setInvoiceDetails(response.result);
-            } else {
-                console.log('error in order details api');
+        const fetchData= async () =>{
+            try {
+                if (!adminIdSessionStorage && !adminIdLocalStorage) {
+                    navigate("/admin/login");
+                    return;
+                }
+        
+                const obj = {
+                    invoice_id    : invoiceId,
+                    admin_id  : adminIdSessionStorage || adminIdLocalStorage,
+                };
+        
+                // postRequestWithToken('admin/get-invoice-details', obj, (response) => {
+                //     if (response.code === 200) {
+                //         setInvoiceDetails(response.result);
+                //     } else {
+                //         console.log('error in order details api');
+                //     }
+                // });
+                const response = await  apiRequests.getRequest(`invoice/get-specific-invoice-details/${obj?.invoice_id}`, obj)
+                if (response.code === 200) {
+                    setInvoiceDetails(response.result);
+                }
+                // postRequestWithToken(`invoice/get-specific-invoice-details/${obj?.invoice_id}`, obj, (response) => {
+                //     if (response.code === 200) {
+                //         setInvoiceDetails(response.result);
+                //     } else {
+                //         console.log('error in order details api');
+                //     }
+                // });
+            } catch (error) {
+                console.log('error in invoice details api');
             }
-        });
+        }
+        fetchData()
     }, [invoiceId, navigate]);
 
     return (

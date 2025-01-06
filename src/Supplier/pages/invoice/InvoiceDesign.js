@@ -46,19 +46,19 @@ function InvoiceDesign() {
             //         console.log('error in order details api');
             //     }
             // });
-            // const response = await apiRequests.postRequest(`invoice/get-specific-invoice-details/${invoiceId}`, obj);
-            // if (response?.code !== 200) {
-            //     console.log('error in order details api', response);
-            //     return;
-            // }
-            // setInvoiceDetails(response?.result);
-            postRequestWithToken(`invoice/get-specific-invoice-details/${invoiceId}`, obj, (response) => {
-                if (response.code === 200) {
-                    setInvoiceDetails(response.result);
-                } else {
-                    console.log('error in order details api');
-                }
-            });
+            const response = await apiRequests.getRequest(`invoice/get-specific-invoice-details/${invoiceId}`, obj);
+            if (response?.code !== 200) {
+                console.log('error in order details api', response);
+                return;
+            }
+            setInvoiceDetails(response?.result);
+            // postRequestWithToken(`invoice/get-specific-invoice-details/${invoiceId}`, obj, (response) => {
+            //     if (response.code === 200) {
+            //         setInvoiceDetails(response.result);
+            //     } else {
+            //         console.log('error in order details api');
+            //     }
+            // });
         }
         fetchData()
     }, [invoiceId, navigate]);

@@ -52,19 +52,19 @@ const InquiryRequestDetails = ({socket}) => {
             //         console.log('error in order list api', response);
             //     }
             // })            
-            const response = await apiRequests.postRequest(`enquiry/get-specific-enquiry-details/${inquiryId}`, obj);
+            const response = await apiRequests.getRequest(`enquiry/get-specific-enquiry-details/${inquiryId}`, obj);
             if (response?.code !== 200) {
                 console.log('error in order list api', response);
                 return;
             }
             setInquiryDetails(response?.result);
-            postRequestWithToken(`enquiry/get-specific-enquiry-details/${inquiryId}`, obj, async (response) => {
-                if (response.code === 200) {
-                    setInquiryDetails(response?.result)
-                } else {
-                    console.log('error in order list api', response);
-                }
-            })            
+            // postRequestWithToken(`enquiry/get-specific-enquiry-details/${inquiryId}`, obj, async (response) => {
+            //     if (response.code === 200) {
+            //         setInquiryDetails(response?.result)
+            //     } else {
+            //         console.log('error in order list api', response);
+            //     }
+            // })            
         }
         fetchData()
     }, [])

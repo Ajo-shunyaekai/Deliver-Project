@@ -89,24 +89,24 @@ const SearchsearchDetails = () => {
             //     }
             // })
             try {
-                // const response = await apiRequests.postRequest(`medicine/get-specific-medicine-details/${medId}`, obj)
-                // if(response?.code !== 200){
-                //     return
-                // }
-                // setDetails(response?.result?.data)
-                // setCountryAvailableIn(response?.result?.countryAvailable)
-                // setMedicineName(response.result?.data?.medicine_name)
-                // setSupplierId(response.result?.supplier_id)
-                postRequestWithToken(`medicine/get-specific-medicine-details/${medId}`, obj, async (response) => {
-                    if (response.code === 200) {
-                        setDetails(response?.result)
-                        setCountryAvailableIn(response?.result?.countryAvailable)
-                        setMedicineName(response.result?.medicine_name)
-                        setSupplierId(response.result?.supplier_id)
-                    } else {
-                        console.log('error in med details api');
-                    }
-                })
+                const response = await apiRequests.getRequest(`medicine/get-specific-medicine-details/${medId}`, obj)
+                if(response?.code !== 200){
+                    return
+                }
+                setDetails(response?.result)
+                setCountryAvailableIn(response?.result?.countryAvailable)
+                setMedicineName(response.result?.medicine_name)
+                setSupplierId(response.result?.supplier_id)
+                // postRequestWithToken(`medicine/get-specific-medicine-details/${medId}`, obj, async (response) => {
+                //     if (response.code === 200) {
+                //         setDetails(response?.result)
+                //         setCountryAvailableIn(response?.result?.countryAvailable)
+                //         setMedicineName(response.result?.medicine_name)
+                //         setSupplierId(response.result?.supplier_id)
+                //     } else {
+                //         console.log('error in med details api');
+                //     }
+                // })
             } catch (error) {
                 console.log('error in medicine list api',error);
             }
