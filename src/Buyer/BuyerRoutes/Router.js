@@ -57,7 +57,6 @@ import Profile from "../components/SharedComponents/Profile/profile"
 import PrivacyPolicy from "../../Policies/PrivcyPolicy"
 import TermsConditions from "../../Policies/Terms&Conditions"
 import ForgotPassword from '../components/SharedComponents/Login/ForgotPassword';
-import EditProfile from "../components/SharedComponents/Profile/EditProfile"
 const socket = io.connect(process.env.REACT_APP_SERVER_URL);
 
 export function NotificationProvider({ children }) {
@@ -208,10 +207,6 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Dashboard />,
-            },
-            {
-path:"edit-profile",
-element:<EditProfile/>
             },
             {
                 path: "profile",

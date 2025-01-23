@@ -151,7 +151,7 @@ body::first-letter {
   align-items: start;
 }
 .cart-left-bottom-container {
-  width: 23.6vw !important; 
+  width: 15.4vw;
   background-color: white;
   border-radius: 4px;
   padding: 25px 16px 6px 16px;
@@ -165,9 +165,8 @@ body::first-letter {
   justify-content: space-between;
 }
 .left-bottom-pert {
-  color: #5e676f;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 0.825rem;
+  color: #5e676f !important;
 }
 .left-bottom-plus {
   color: #99a0ac;
@@ -524,7 +523,7 @@ input[type="checkbox"]:focus + span::before {
     sans-serif !important;
 }
 #chart-line-2 {
-  width: 400px !important;
+  width: 150px !important;
   height: 40px !important;
 }
 #search-engine-chart {

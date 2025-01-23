@@ -71,19 +71,19 @@ const OngoingInquiriesList = () => {
                         <thead>
                             <tr className='completed-table-row-container m-0' style={{ backgroundColor: 'transparent' }}>
                                 <th className='table-row-item table-order-1'>
-                                <span className='completed-header-text-color' >  Inquiry ID</span>
+                                    Inquiry ID
                                 </th>
                                 <th className='completed-table-row-item completed-table-order-1'>
-                                <span className='completed-header-text-color' >   Date</span>
+                                    Date
                                 </th>
                                 <th className='completed-table-row-item completed-table-order-2'>
-                                <span className='completed-header-text-color' >  Supplier Name</span>
+                                    Supplier Name
                                 </th>
                                 <th className='completed-table-row-item completed-table-order-1'>
-                                <span className='completed-header-text-color' >   Status</span>
+                                    Status
                                 </th>
                                 <th className='completed-table-row-item completed-table-order-1'>
-                                <span className='completed-header-text-color' >  Action</span>
+                                    Action
                                 </th>
                             </tr>
                         </thead>
@@ -119,12 +119,11 @@ const OngoingInquiriesList = () => {
                                     </tr>
                                 ))
                             ) : (
-                                <>
-                                <div className='pending-products-no-orders'>
-                                    No Purchase Orders
-                                </div>
-
-                            </>
+                                <tr>
+                                    <td colSpan="5" className='text-center'>
+                                        No Data Available
+                                    </td>
+                                </tr>
                             )}
                         </tbody>
                     </Table>

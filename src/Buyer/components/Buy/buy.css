@@ -237,7 +237,7 @@ ul {
   padding: 50px 30px;
   display: flex;
   justify-content: center;
-  align-items: normal;
+  align-items: center;
   flex-wrap: wrap;
   gap: 30px;
 }

@@ -138,12 +138,13 @@ body {
   color: #99a0ac;
   font-size: 14px;
 }
-.supplier-cart-left-bottom-section {
+.cart-left-bottom-section {
   display: flex;
   justify-content: space-between;
+  align-items: start;
 }
-.supplier-cart-left-bottom-container {
-  width: 15.6vw;
+.cart-left-bottom-container {
+  width: 15vw;
   background-color: white;
   border-radius: 4px;
   padding: 25px 16px 6px 16px;
@@ -151,23 +152,20 @@ body {
   flex-direction: column;
   row-gap: 3px;
 }
-.supplier-left-bottom-cart-top {
+.left-bottom-cart-top {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-.supplier-left-bottom-pert {
-  color: #5e676f;
+.left-bottom-pert {
   font-size: 14px;
-  font-weight: 600;
 }
-.supplier-left-bottom-plus {
+.left-bottom-plus {
   color: #99a0ac;
   font-size: 12px;
 }
-.supplier-left-bottom-head {
+.left-bottom-head {
   font-size: 14px;
-  color: #5e676f !important;
 }
 .cart-right-main-container {
   background-color: white;
@@ -515,16 +513,13 @@ input[type="checkbox"]:focus + span::before {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif !important;
 }
-.search-engine-chart{
-  width: 20vw !important;
-}
 #chart-line-2 {
   width: 150px !important;
   height: 40px !important;
 }
 #search-engine-chart {
-  width: 140px !important;
-  height: 30px !important;
+  width: 130px !important;
+  height: 40px !important;
 }
 #directly-chart {
   width: 140px !important;
@@ -534,9 +529,6 @@ input[type="checkbox"]:focus + span::before {
 @media screen and (max-width: 1480px) {
   .dashboard-section {
     max-width: 100%;
-  }
-  .supplier-cart-left-bottom-container {
-    width: 16.8vw;
   }
   .top-container {
     width: 32vw;

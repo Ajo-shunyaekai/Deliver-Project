@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import WorldMap from "react-svg-worldmap";
 import { Link, useNavigate } from 'react-router-dom';
-import './Buyerdashboard.css'
+import './dashboard.css'
 import ProgressBar from './chart/ProgressBar';
 import OrangeBar from './chart/OrangeBar'
 import CircularBar from './chart/CircularBar';
@@ -136,28 +136,36 @@ const Dashboard = () => {
                             </div>
                         </div>
                         <div className='cart-left-bottom-section'>
-                            <Link to='/buyer/invoice/Proforma-Invoice'>
-                                <div className='cart-left-bottom-container'>
-                                    <div className='left-bottom-cart-top'>
-                                        <span className='left-bottom-pert'>{orderSummary?.enquiryCount?.[0]?.count || 0}</span>
-                                    </div>
-                                    <div className='left-bottom-head'>Proforma Invoices</div>
-                                    <div className='line-chart-graph'>
-                                        <ConversionChart />
-                                    </div>
+
+                            <div className='cart-left-bottom-container'>
+                                <div className='left-bottom-cart-top'>
+                                    <span className='left-bottom-pert'>{orderSummary?.enquiryCount?.[0]?.count || 0}</span>
                                 </div>
-                            </Link>
-                            <Link to='/buyer/my-supplier'>
-                                <div className='cart-left-bottom-container'>
-                                    <div className='left-bottom-cart-top'>
-                                        <span className='left-bottom-pert'>{orderSummary?.purchaseOrderCount?.[0]?.count || 0}</span>
-                                    </div>
-                                    <div className='left-bottom-head'>My Supplier</div>
-                                    <div className='line-chart-graph'>
-                                        <SearchEngineChart />
-                                    </div>
+                                <div className='left-bottom-head'>Lorem</div>
+                                <div className='line-chart-graph'>
+                                    <ConversionChart />
                                 </div>
-                            </Link>
+                            </div>
+
+                            <div className='cart-left-bottom-container'>
+                                <div className='left-bottom-cart-top'>
+                                    <span className='left-bottom-pert'>{orderSummary?.purchaseOrderCount?.[0]?.count || 0}</span>
+                                </div>
+                                <div className='left-bottom-head'>Lorem</div>
+                                <div className='line-chart-graph'>
+                                    <SearchEngineChart />
+                                </div>
+                            </div>
+
+                            <div className='cart-left-bottom-container'>
+                                <div className='left-bottom-cart-top'>
+                                    <span className='left-bottom-pert'>40</span>
+                                </div>
+                                <div className='left-bottom-head'>Lorem</div>
+                                <div className='line-chart-graph'>
+                                    <DirectlyChart />
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className='cart-right-main-container'>
