@@ -130,12 +130,10 @@ flex-direction: column;
 
 .noti_top_wrapper {
   height: 250px;
-  padding: 10px 14px;
   overflow-y: scroll;
   display: flex
 ;
   flex-direction: column;
-  row-gap: 12px;
 }
 .noti_top_wrapper::-webkit-scrollbar{
   display: none;
@@ -153,6 +151,8 @@ flex-direction: column;
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(160, 175, 185, 0.15);
 }
 .noti_profile {
   width: 100%;

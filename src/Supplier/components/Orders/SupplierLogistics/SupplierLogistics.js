@@ -6,6 +6,7 @@ import styles from "./supplierlogistics.module.css"
 import DatePicker from 'react-date-picker';
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
+import { Link } from "react-router-dom";
 const SupplierLogistics = () => {
     const [containers, setContainers] = useState([{}]);
     const [addressType, setAddressType] = useState("");
@@ -93,14 +94,6 @@ const SupplierLogistics = () => {
         { value: 'Dollo', label: 'Dollo' },
         { value: 'Udiliv', label: 'Udiliv' },
     ];
-    // const handleAddContainer = () => {
-    //     setContainers([...containers, {}]);
-    // };
-
-    // const handleRemoveContainer = (index) => {
-    //     const updatedContainers = containers.filter((_, i) => i !== index);
-    //     setContainers(updatedContainers);
-    // };
     return (
 
         <div className={styles.container}>
@@ -130,7 +123,10 @@ const SupplierLogistics = () => {
             </div>
             <form className={styles.formLogistics}>
                 <div className={styles.formInnerClass}>
-                    <div className={styles.innerHeading}>Pickup Details</div>
+                    
+                        <div className={styles.innerHeading}>Pickup Details</div>
+                        
+                   
                     <div className={styles.checkboxSection}>
                         <input type="checkbox" id="termsCheckbox" className={styles.checkboxInput} />
                         <label htmlFor="termsCheckbox" className={styles.checkboxLabel}>
@@ -301,58 +297,76 @@ const SupplierLogistics = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Start the pickup address */}
+                <div className={styles.pickupContainer}>
+                    <div className={styles.pickupHeadSection}>
+                        <span className={styles.pickupHeading}>Pickup Details</span>
+                        <Link to='/supplier/logistics-address'>
+                            <span className={styles.pickupButton}>Change</span>
+                        </Link>
+                    </div>
+                    <div className={styles.pickupInnerContainer}>
+                        <span className={styles.pickupText}>Shivanshi Tripathi <span className={styles.pickupAdd}>Warehouse</span></span>
+                        <span className={styles.pickupText}>476 Udyog Vihar Phase 5</span>
+                        <span className={styles.pickupText}>Seactor 19 Near 478</span>
+                        <span className={styles.pickupText}>India Haryana Gurugram 456331</span>
+                    </div>
+                </div>
+
+                {/* End the pickup address */}
                 <div className={styles.formMaterialContainer}>
                     <div className={styles.headBillSection}>
                         <div className={styles.innerBillHead}>Bills of Material</div>
                         <span className={styles.innerAddButton} onClick={handleAddContainer}>
                             Add More
                         </span>
-                        </div>
-                        {containers.map((_, index) => (
-                            <div
-                                className={`${styles['inner-container']} ${shrunkContainers.includes(index) ? styles.shrink : ''
-                                    }`}
-                                key={index}
-                            >
-                                <div className={styles.logisticInputSection}>
-                                    <label className={styles.formLabel}>
-                                        Product Name<span className={styles.labelstamp}>*</span>
-                                    </label>
-                                    <Select options={productOptions} placeholder="Select the Product" />
-                                </div>
-                                <div className={styles.logisticInputSection}>
-                                    <label className={styles.formLabel}>
-                                        Quantity<span className={styles.labelstamp}>*</span>
-                                    </label>
-                                    <input
-                                        className={styles.formInput}
-                                        type="text"
-                                        placeholder="Enter Quantity"
-                                        autoComplete="off"
-                                    />
-                                </div>
-                                <div className={styles.logisticInputSection}>
-                                    <label className={styles.formLabel}>
-                                        No. of Packages<span className={styles.labelstamp}>*</span>
-                                    </label>
-                                    <input
-                                        className={styles.formInput}
-                                        type="text"
-                                        placeholder="Enter No. of Packages"
-                                        autoComplete="off"
-                                    />
-                                </div>
-                                {containers.length > 1 && (
-                                    <div
-                                        className={styles.removeButtons}
-                                        onClick={() => handleRemoveContainer(index)}
-                                    >
-                                        <span className={styles.crossButton}>✖</span>
-                                    </div>
-                                )}
+                    </div>
+                    {containers.map((_, index) => (
+                        <div
+                            className={`${styles['inner-container']} ${shrunkContainers.includes(index) ? styles.shrink : ''
+                                }`}
+                            key={index}
+                        >
+                            <div className={styles.logisticInputSection}>
+                                <label className={styles.formLabel}>
+                                    Product Name<span className={styles.labelstamp}>*</span>
+                                </label>
+                                <Select options={productOptions} placeholder="Select the Product" />
                             </div>
-                        ))}
-                    
+                            <div className={styles.logisticInputSection}>
+                                <label className={styles.formLabel}>
+                                    Quantity<span className={styles.labelstamp}>*</span>
+                                </label>
+                                <input
+                                    className={styles.formInput}
+                                    type="text"
+                                    placeholder="Enter Quantity"
+                                    autoComplete="off"
+                                />
+                            </div>
+                            <div className={styles.logisticInputSection}>
+                                <label className={styles.formLabel}>
+                                    No. of Packages<span className={styles.labelstamp}>*</span>
+                                </label>
+                                <input
+                                    className={styles.formInput}
+                                    type="text"
+                                    placeholder="Enter No. of Packages"
+                                    autoComplete="off"
+                                />
+                            </div>
+                            {containers.length > 1 && (
+                                <div
+                                    className={styles.removeButtons}
+                                    onClick={() => handleRemoveContainer(index)}
+                                >
+                                    <span className={styles.crossButton}>✖</span>
+                                </div>
+                            )}
+                        </div>
+                    ))}
+
                     <div className={styles.headBillSection}>
                         <div className={styles.innerBillHead}>Package Details</div>
                         <span className={styles.innerAddButton} onClick={addPackage}>

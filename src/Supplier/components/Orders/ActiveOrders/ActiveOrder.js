@@ -169,28 +169,28 @@ const ActiveOrder = ({ orderList, totalOrders, currentPage, ordersPerPage, handl
                         </div>
                         {modal && <OrderCancel setModal={setModal} orderId={selectedOrderId} activeLink={activeLink} />}
                         {
-                                    orderList.length > 0 && (
-                        <div className='pagi-container'>
-                            <Pagination
-                                activePage={currentPage}
-                                itemsCountPerPage={ordersPerPage}
-                                totalItemsCount={totalOrders}
-                                pageRangeDisplayed={5}
-                                onChange={handlePageChange}
-                                itemClass="page-item"
-                                linkClass="page-link"
-                                prevPageText={<KeyboardDoubleArrowLeftIcon style={{ fontSize: '15px' }} />}
-                                nextPageText={<KeyboardDoubleArrowRightIcon style={{ fontSize: '15px' }} />}
-                                hideFirstLastPages={true}
-                            />
-                            <div className='pagi-total'>
-                                <div className='pagi-total'>
-                                    {/* Total Items: {totalOrders} */}
-                                    Total Items: {totalOrders}
+                            orderList.length > 0 && (
+                                <div className='pagi-container'>
+                                    <Pagination
+                                        activePage={currentPage}
+                                        itemsCountPerPage={ordersPerPage}
+                                        totalItemsCount={totalOrders}
+                                        pageRangeDisplayed={5}
+                                        onChange={handlePageChange}
+                                        itemClass="page-item"
+                                        linkClass="page-link"
+                                        prevPageText={<KeyboardDoubleArrowLeftIcon style={{ fontSize: '15px' }} />}
+                                        nextPageText={<KeyboardDoubleArrowRightIcon style={{ fontSize: '15px' }} />}
+                                        hideFirstLastPages={true}
+                                    />
+                                    <div className='pagi-total'>
+                                        <div className='pagi-total'>
+                                            {/* Total Items: {totalOrders} */}
+                                            Total Items: {totalOrders}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                                    )}
+                            )}
                     </div>
                 </div>
             </div>

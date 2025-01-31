@@ -61,7 +61,10 @@ import ForgotPassword from "../components/SharedComponents/Signup/ForgotPassword
 import EditProfile from "../components/SharedComponents/Profile/EditProfile";
 import { fetchUserData } from "../../redux/reducers/userDataSlice";
 import { useDispatch } from "react-redux";
-import SupplierLogistics from "../components/Orders/SupplierLogistics";
+import SupplierLogistics from "../components/Orders/SupplierLogistics/SupplierLogistics";
+import AddNewAddress from "../components/Orders/SupplierLogistics/SupplierAddAddress"
+import EditNewAddress from "../components/Orders/SupplierLogistics/SupplierEditAddress";
+import SupplierLogisticsAddress from "../components/Orders/SupplierLogistics/SupplierLogisticsAddress"
 const socket = io.connect(process.env.REACT_APP_SERVER_URL);
 
 export const NotificationProvider = ({ children }) => {
@@ -193,10 +196,10 @@ export const NotificationProvider = ({ children }) => {
       };
     }
   }, [supplierIdSessionStorage, supplierIdLocalStorage, refresh]);
-  
-    // useEffect(()=>{
-    //     sessionStorage.getItem('_id') && dispatch(fetchUserData(sessionStorage.getItem('_id')))
-    // },[])
+
+  // useEffect(()=>{
+  //     sessionStorage.getItem('_id') && dispatch(fetchUserData(sessionStorage.getItem('_id')))
+  // },[])
 
   return (
     <SupplierSidebar
@@ -420,9 +423,21 @@ const router = createBrowserRouter([
         element: <EditProfile />,
       },
       {
-        path:"supplier-logistics",
-        element:<SupplierLogistics/>
-      }
+        path: "supplier-logistics",
+        element: <SupplierLogistics />
+      },
+      {
+        path: "add-new-address",
+        element: <AddNewAddress />
+      },
+      {
+        path: "edit-new-address",
+        element: <EditNewAddress />
+      },
+      {
+          path:"logistics-address",
+          element:<SupplierLogisticsAddress/>
+      },
     ],
   },
   {
