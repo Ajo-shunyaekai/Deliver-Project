@@ -121,12 +121,59 @@ const SupplierLogistics = () => {
                     </div>
                 </div>
             </div>
+
+
+            {/* Style the pickup address container */}
+            <div className={styles.logisticsAddCardContainer}>
+                <div className={styles.logisticsAddressPickupSection}>
+                    <div className={styles.adresssAddCardContainer}>
+                        <div className={styles.logisticsMainHeading}>Drop Details</div>
+                        <div className={styles.nameContainer}>
+                            <span className={styles.addressText}>Shivanshi Tripathi</span>
+                            <div className={styles.typeAdresss}>Warehouse</div>
+                        </div>
+                        <span className={styles.addressText}>C-12 Birlagram Nagda,Near Bal Mandir</span>
+                        <span className={styles.addressText}>India, Madhya Pradesh, Nagda 456331</span>
+                        <span className={styles.addressText}>+91 6265699633</span>
+                    </div>
+                    <div className={styles.adresssCardContainer}>
+                    <div className={styles.logisticsMainHeading}>Transport Details</div>
+                    <div className={styles.transportInnerSection}>
+                        <div className={styles.transportHead}>Mode of Transport</div>
+                        <div className={styles.transportText}>Air Cargo (Faster Delivery & High Freight)</div>
+                    </div>
+                    <div className={styles.transportInnerSection}>
+                        <div className={styles.transportHead}>Extra Services</div>
+                        <div className={styles.transportText}>Custom Clearance, Door to Door</div>
+                    </div>
+                </div>
+
+                     {/* Start the pickup address */}
+                <div className={styles.pickupContainer}>
+                    <div className={styles.pickupHeadSection}>
+                        <span className={styles.pickupHeading}>Pickup Details</span>
+                        <Link to='/supplier/logistics-address'>
+                            <span className={styles.pickupButton}>Change</span>
+                        </Link>
+                    </div>
+                    <div className={styles.pickupInnerContainer}>
+                        <span className={styles.pickupText}>Shivanshi Tripathi <span className={styles.pickupAdd}>Warehouse</span></span>
+                        <span className={styles.pickupText}>476 Udyog Vihar Phase 5</span>
+                        <span className={styles.pickupText}>Seactor 19 Near 478</span>
+                        <span className={styles.pickupText}>India Haryana Gurugram 456331</span>
+                    </div>
+                </div>
+                {/* End the pickup address */}
+                </div>
+               
+            </div>
+
             <form className={styles.formLogistics}>
                 <div className={styles.formInnerClass}>
-                    
-                        <div className={styles.innerHeading}>Pickup Details</div>
-                        
-                   
+
+                    <div className={styles.innerHeading}>Pickup Details</div>
+
+
                     <div className={styles.checkboxSection}>
                         <input type="checkbox" id="termsCheckbox" className={styles.checkboxInput} />
                         <label htmlFor="termsCheckbox" className={styles.checkboxLabel}>
@@ -298,23 +345,7 @@ const SupplierLogistics = () => {
                     </div>
                 </div>
 
-                {/* Start the pickup address */}
-                <div className={styles.pickupContainer}>
-                    <div className={styles.pickupHeadSection}>
-                        <span className={styles.pickupHeading}>Pickup Details</span>
-                        <Link to='/supplier/logistics-address'>
-                            <span className={styles.pickupButton}>Change</span>
-                        </Link>
-                    </div>
-                    <div className={styles.pickupInnerContainer}>
-                        <span className={styles.pickupText}>Shivanshi Tripathi <span className={styles.pickupAdd}>Warehouse</span></span>
-                        <span className={styles.pickupText}>476 Udyog Vihar Phase 5</span>
-                        <span className={styles.pickupText}>Seactor 19 Near 478</span>
-                        <span className={styles.pickupText}>India Haryana Gurugram 456331</span>
-                    </div>
-                </div>
 
-                {/* End the pickup address */}
                 <div className={styles.formMaterialContainer}>
                     <div className={styles.headBillSection}>
                         <div className={styles.innerBillHead}>Bills of Material</div>
