@@ -114,12 +114,10 @@ body{
 
 .noti_top_wrapper {
   height: 250px;
-  padding: 10px 14px;
   overflow-y: scroll;
   display: flex
 ;
   flex-direction: column;
-  row-gap: 12px;
 }
 .no_notifications{
   font-size: 14px;
@@ -130,11 +128,13 @@ body{
 }
 
 .noti_profile_wrapper {
-  display: flex;
+  display: flex
+  ;
       justify-content: space-around;
       align-items: center;
-      gap: 10px;
-      cursor: pointer !important;
+      gap: 1rem;
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(160, 175, 185, 0.15);
 }
 .noti_profile_wrapper:hover {
   background-color: rgba(135, 150, 165, 0.1);
@@ -220,7 +220,7 @@ body{
   top: 100%;
   right: 2%;
   padding: 0px 0px;
-  width: 200px;
+  width: 240px;
   border-radius: 4px;
   box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
     rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
